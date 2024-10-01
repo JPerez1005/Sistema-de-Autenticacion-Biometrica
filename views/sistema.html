@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema De Autenticación Biometrica</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Asistencia con Huella Dactilar</h1>
+        <button onclick="register()">Registrar Huella</button>
+        <button onclick="authenticate()">Autenticar</button>
+        
+        <h2>Estudiantes Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>Fecha de Registro</th>
+                    <th>Hora de Registro</th>
+                </tr>
+            </thead>
+            <tbody id="students-list">
+                <!-- Lista de estudiantes registrados -->
+            </tbody>
+        </table>
+
+        <h2>Registro de Asistencia</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody id="attendance-list">
+                <!-- Registro de asistencia -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
