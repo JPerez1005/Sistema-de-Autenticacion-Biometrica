@@ -10,10 +10,10 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(https://images.pexels.com/photos/3419706/pexels-photo-3419706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-image: url(../assets/e4.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top;
 
 }
 
@@ -38,7 +38,7 @@ header{
 .navigation a{
     position: relative;
     font-size: 1.1em;
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -51,7 +51,7 @@ header{
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: #fff;
+    background: #000;
     border-radius: 5px;
     /* transform-origin: right; *//*cambio de animacion*/
     transform: scaleX(0);/*esconde el subrayado*/
@@ -67,20 +67,20 @@ header{
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #000;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: #000;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
 }
 
 .navigation .btnLogin-popup:hover{
-    background: #fff;
-    color: black;
+    background: #000;
+    color: white;
 }
 
 .wrapper{/*caja del login*/
@@ -154,16 +154,15 @@ header{
 
 .form-box h2{
     font-size: 2em;
-    color: #222;
+    color: #000;
     text-align: center;/*cenra horizontalmente el texto*/
-
 }
 
 .input-box{
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #000;
     margin: 30px 0;
 }
 
@@ -189,8 +188,8 @@ header{
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
-    color: #222;
+    font-size: 1.3em;
+    color: #000;
     font-weight: 600;
 }
 
@@ -198,38 +197,14 @@ header{
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #222;
+    color: #000;
     line-height: 57px;
-}
-
-
-.remember-forgot{
-    font-size: .9em;
-    color: #222;
-    font-weight: 500;
-    margin: -5px 0 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.remember-forgot label input{
-    accent-color: #222;
-    margin-right: 3px;
-}
-
-.remember-forgot a{
-    color: #222;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover{
-    text-decoration: underline;
 }
 
 .btn{
     width: 100%;
     height: 45px;
-    background: #222;
+    background: #000;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -237,22 +212,4 @@ header{
     font-size: 1em;
     color: #fff;
     font-weight: 500;
-}
-
-.login-register{
-    font-size: .9em;
-    color: #222;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-}
-
-.login-register p a {
-    color: #222;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.login-register p a:hover{
-    text-decoration: underline;
 }

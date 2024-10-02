@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/presentacion.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg-slide active">
+            <div class="circle bg">
+                <img src="../assets/e5.webp" alt="">
+            </div>
+            <div class="circle large">
+                <img src="../assets/e5.webp" alt="">
+            </div>
+            <div class="circle small">
+                <img src="../assets/e5.webp" alt="">
+            </div>
+
+            <div class="content">
+                <div class="place">
+                    <!-- Botón para abrir modal de asistencia -->
+                    <button onclick="openAttendanceModal()">Registrar Asistencia</button>
+
+                    <!-- Botón para registrar huella del profesor -->
+                    <button onclick="registerStudent()">Registrar Estudiante</button>
+                    <!-- Modal para registrar asistencia -->
+                    <div id="attendanceModal" style="display: none;">
+                        <h2>Registrar Asistencia</h2>
+                        <div id="students-checkbox-list"></div>
+                        
+                        <button onclick="confirmAttendance()">Confirmar Asistencia</button>
+                        <button onclick="closeAttendanceModal()">Cerrar</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-slide">
+            <div class="circle bg">
+                <img src="../assets/e2.webp" alt="">
+            </div>
+            <div class="circle large">
+                <img src="../assets/e2.webp" alt="">
+            </div>
+            <div class="circle small">
+                <img src="../assets/e2.webp" alt="">
+            </div>
+
+            <div class="content">
+                <div class="place">
+                    <button onclick="downloadAttendancePDF()">Descargar Asistencia en PDF</button>
+                    <button onclick="downloadAttendanceExcel()">Descargar Asistencia en Excel</button>
+                    <!-- Buscador de estudiantes -->
+                    <input type="text" id="attendanceSearch" placeholder="Buscar estudiante..." onkeyup="searchAttendance()">
+                    <!-- Tabla de asistencia -->
+                    <div class="cont-table-1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Profesor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendance-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-slide">
+            <div class="circle bg">
+                <img src="../assets/e3.webp" alt="">
+            </div>
+            <div class="circle large">
+                <img src="../assets/e3.webp" alt="">
+            </div>
+            <div class="circle small">
+                <img src="../assets/e3.webp" alt="">
+            </div>
+            <div class="content">
+                <div class="place">
+                    <h2>Registro de estudiantes</h2>
+                    <br><br>
+                    <div>
+                        <!-- Buscador de estudiantes -->
+                        <input type="text" id="studentSearch" placeholder="Buscar estudiante..." onkeyup="searchStudents()">
+                        <!-- Tabla de estudiantes -->
+                        <div class="cont-table-1">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>ID Estudiante</th>
+                                        <th>Fecha Registro</th>
+                                        <th>Hora Registro</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="students-list"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="exit-btn" id="logoutButton">
+            <i class='bx bx-door-open'></i>
+        </button>
+        <div class="rotate-btn" style="cursor: pointer;">
+            <i class='bx bx-rotate-right'></i>
+        </div>
+    </div>
+    <script src="../js/presentacion.js"></script>
+    <script src="../js/sistema.js"></script>
+    <script>
+        // Función de búsqueda en la tabla de estudiantes
+        function searchStudents() {
+            const input = document.getElementById('studentSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#students-list tr');
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const name = cells[0].textContent.toLowerCase();
+                if (name.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Función de búsqueda en la tabla de asistencia
+        function searchAttendance() {
+            const input = document.getElementById('attendanceSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#attendance-list tr');
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const name = cells[0].textContent.toLowerCase();
+                const date = cells[1].textContent.toLowerCase();
+                const professor = cells[3].textContent.toLowerCase();
+
+                if (name.includes(input) || date.includes(input) || professor.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

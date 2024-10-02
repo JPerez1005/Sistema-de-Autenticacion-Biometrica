@@ -1,0 +1,240 @@
+*
+{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-slide,
+.bg-slide .circle,
+.bg-slide .circle img,
+.circle-darktransp
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-slide
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-slide .circle
+{
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.bg-slide.active .circle
+{
+    z-index: 10;
+}
+
+.bg-slide .circle.large
+{
+    clip-path: circle(50% at 50% 50%);
+}
+
+.bg-slide .circle.small
+{
+    clip-path: circle(30% at 50% 50%);
+}
+
+.bg-slide.active .circle.small
+{
+    z-index: 12;
+}
+
+.bg-slide .circle img
+{
+    object-fit: cover;
+    transform: rotate(0deg) scale(5);
+    opacity: 0;
+    transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.bg-slide.active .circle img
+{
+    object-fit: cover;
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+}
+
+.bg-slide.after-active .circle img
+{
+    transform: rotate(720deg) scale(4);
+    opacity: 0;
+}
+
+.bg-slide.active .circle.bg img,
+.bg-slide.after-active .circle.bg img
+{
+    transition-delay: .9s;
+}
+
+.bg-slide.active .circle.large img,
+.bg-slide.after-active .circle.large img
+{
+    transition-delay: .6s;
+}
+
+.bg-slide.active .circle.small img,
+.bg-slide.after-active .circle.small img
+{
+    transition-delay: .3s;
+}
+
+.bg-slide .content
+{
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* transform: translateY(40%); */
+    transition-delay: 1s;
+    height: 500px;
+    width: 700px;
+    backdrop-filter: blur(20px);
+    padding: 5%;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.content .place
+{
+    overflow: hidden;
+}
+
+.bg-slide.active .content
+{
+    z-index: 101;
+    /* transform: translateY(0%); */
+    opacity: 1;
+}
+
+.rotate-btn
+{
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    background-color: peru;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exit-btn
+{
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: peru;
+    border: 2px solid #fff;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate-btn i, .exit-btn i
+{
+    font-size: 40px;
+    color: #000;
+}
+
+.rotate-btn.active
+{
+    transform: rotate(360deg);
+    pointer-events: none;
+    transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: .2s;
+}
+
+button{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px #fff solid;
+    padding: 1%;
+    cursor: pointer;
+}
+
+#attendanceModal{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px #000 solid;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#attendanceModal h2{
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#attendanceModal button{
+    margin-top: 22px;
+    text-align: center;
+}
+
+#attendanceModal #students-checkbox-list{
+    text-align: start;
+    padding-left: 15%;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.cont-table-1{
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    overflow-y: auto;
+    background-color: #ffffff73;
+    border-radius: 15px;
+    border: 2px #000 solid;
+}
+
+.cont-table-1 table{
+    border-radius: 12px;
+    border-collapse: collapse; /* Asegura que los bordes internos no se dupliquen */
+    width: 100%;
+}
+
+.cont-table-1 table th, td {
+    border: 1px solid black; /* Define el borde de las celdas */
+    padding: 8px; /* Espacio interno en las celdas */
+    text-align: left; /* Alineación del texto dentro de las celdas */
+}
