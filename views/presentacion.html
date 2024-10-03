@@ -27,17 +27,17 @@
             <div class="content">
                 <div class="place">
                     <!-- Botón para abrir modal de asistencia -->
-                    <button onclick="openAttendanceModal()">Registrar Asistencia</button>
+                    <button id="openAttendanceButton">Registrar Asistencia</button>
 
                     <!-- Botón para registrar huella del profesor -->
-                    <button onclick="registerStudent()">Registrar Estudiante</button>
+                    <button id="registrarEstudiante">Registrar Estudiante</button>
                     <!-- Modal para registrar asistencia -->
                     <div id="attendanceModal" style="display: none;">
                         <h2>Registrar Asistencia</h2>
                         <div id="students-checkbox-list"></div>
                         
-                        <button onclick="confirmAttendance()">Confirmar Asistencia</button>
-                        <button onclick="closeAttendanceModal()">Cerrar</button>
+                        <button id="confirmarAsistencia">Confirmar Asistencia</button>
+                        <button id="closeAttendanceButton">Cerrar</button>
                     </div>
                     
                 </div>
@@ -57,10 +57,10 @@
 
             <div class="content">
                 <div class="place">
-                    <button onclick="downloadAttendancePDF()">Descargar Asistencia en PDF</button>
-                    <button onclick="downloadAttendanceExcel()">Descargar Asistencia en Excel</button>
+                    <button id="downloadPdfButton">Descargar Asistencia en PDF</button>
+                    <button id="downloadExcelButton">Descargar Asistencia en Excel</button>
                     <!-- Buscador de estudiantes -->
-                    <input type="text" id="attendanceSearch" placeholder="Buscar estudiante..." onkeyup="searchAttendance()">
+                    <input type="text" id="attendanceSearch" placeholder="Buscar estudiante...">
                     <!-- Tabla de asistencia -->
                     <div class="cont-table-1">
                         <table>
@@ -95,7 +95,7 @@
                     <br><br>
                     <div>
                         <!-- Buscador de estudiantes -->
-                        <input type="text" id="studentSearch" placeholder="Buscar estudiante..." onkeyup="searchStudents()">
+                        <input type="text" id="studentSearch" placeholder="Buscar estudiante...">
                         <!-- Tabla de estudiantes -->
                         <div class="cont-table-1">
                             <table>
@@ -122,43 +122,7 @@
         </div>
     </div>
     <script src="../js/presentacion.js"></script>
-    <script src="../js/sistema.js"></script>
-    <script>
-        // Función de búsqueda en la tabla de estudiantes
-        function searchStudents() {
-            const input = document.getElementById('studentSearch').value.toLowerCase();
-            const rows = document.querySelectorAll('#students-list tr');
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                const name = cells[0].textContent.toLowerCase();
-                if (name.includes(input)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
-
-        // Función de búsqueda en la tabla de asistencia
-        function searchAttendance() {
-            const input = document.getElementById('attendanceSearch').value.toLowerCase();
-            const rows = document.querySelectorAll('#attendance-list tr');
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                const name = cells[0].textContent.toLowerCase();
-                const date = cells[1].textContent.toLowerCase();
-                const professor = cells[3].textContent.toLowerCase();
-
-                if (name.includes(input) || date.includes(input) || professor.includes(input)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <script src="../js/sistema.js" type="module"></script>
 </body>
 
 </html>

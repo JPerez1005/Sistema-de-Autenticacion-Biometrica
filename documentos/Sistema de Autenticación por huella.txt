@@ -1,0 +1,57 @@
+Sistema de Autenticación por huella de memoria interna del computador
+
+Requerimientos
+-Inicio de Sessión del profesor---------------------3:30 horas=1 hora el diseño, 1 hora el backend, 1 modularizacion, 30 min datos internos de los profesores
+-Registros de los estudiantes==1 vez----------------2:30 horas= 1 hora registro Backend, 30 min diseño,30 min separación de datos ,30 min modularizacion
+-Registro de asistencia de los estudiantes----------2:30 horas= Lo de Arriba
+--Muestra de pantalla de estudiantes por búsqueda---2:00 horas
+-Tabla de Datos por busqueda------------------------2:00 horas
+-Descarga de documentos por Pdf o Excel-------------3:00 horas
+-Cerrar Sessión-------------------------------------5    horas
+
+Diseño
+-Login de Profesores= Ventana de Aparición desde el nav
+-Botón Registro = Primera Paginación
+-Botón Registro de Asistencia = Primera Paginación
+-Tabla de Registros de Asistencias por búsqueda y descarga de documento= Segunda Paginación
+-Tabla de Registros de Estudiantes por búsqueda y descarga de documento= Tercera Paginación
+-Boton para Cerrar Sessión = Parte superior Derecha
+
+Codigo Interno
+-Registro de Profesores= Documento aparte, modularización, pagina principal
+
+Total= 20:30 tarda el proyecto
+
+---1 octubre=10:15min
+--Inicio
+-8:00 am
+--Descansos
+-11:00 am- 01:00 pm
+--Final
+-8:00 pm
+
+---2 octubre=10:15
+
+--Inicio
+-8:00 am
+--Descansos
+-11:00 am- 01:00 pm
+--Final
+-8:00 pm
+
+Video Explicativo
+
+** No Olvidar el localhost **
+** Borrado de datos del LocalStorage **
+** Uso de documento de registro de profesores **
+** Modularización **
+
+Palabras claves
+
+- Modularizacion = desfragmentación(descomposicion) y sincornizacion de documentos o datos
+- Componente = Pertenece al HTML, y se pueden conectar al js por medio de metodos
+- Metodos = Son comportamientos que obtienen los objetos o componentes del HTML, los métodos pertenecen al js
+- Funciones = las funciones se organizan para describir un comportamiento o una acción del programa, pertenece al js
+
+
+botón puede cumplir una función, por medio de un método o por medio de una funcion

@@ -32,3 +32,5 @@ function downloadAttendanceExcel() {
     // Exportar el archivo Excel
     XLSX.writeFile(workbook, "asistencia.xlsx");
 }
+
+export {downloadAttendancePDF,downloadAttendanceExcel};
