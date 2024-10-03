@@ -11,7 +11,7 @@ iconClose.addEventListener('click', ()=>{
 
 // Backend
 
-// Lista de correos electrónicos y contraseñas válidos
+// Lista de nombres y contraseñas válidas
 const users = [
     { nombre: "Camilo", password: "password1" },
     { nombre: "Tatiana", password: "password2" },

@@ -31,4 +31,4 @@ rotateBtn.addEventListener('click', ()=>{
     }
 
     slides[index].classList.add('active');
-})
+});
