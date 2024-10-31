@@ -51,6 +51,7 @@ async function registerStudent() {
     const registrationDate = now.toLocaleDateString(); // Obtener la fecha en formato local
     const registrationTime = now.toLocaleTimeString(); // Obtener la hora en formato local
 
+    // Gracias a esto se registra una huella digital
     const publicKeyCredentialCreationOptions = {
         challenge: new Uint8Array(32),
         rp: { name: "Asistencia" },
@@ -60,7 +61,7 @@ async function registerStudent() {
             displayName: "Profesor"
         },
         pubKeyCredParams: [{ alg: -7, type: "public-key" }],
-        authenticatorSelection: { userVerification: "required" },
+        authenticatorSelection: { userVerification: "preferred" },
         timeout: 60000
     };
 

@@ -1,8 +1,8 @@
 import { registerStudent, loadStudents} from "./localstorage-registros.js";
+import { confirmAttendance, loadAttendance, checkAndClearAttendanceLog} from "./localstorage-asistencias.js";
 import { openAttendanceModal, closeAttendanceModal} from "./funcionamiento-modal.js";
 import { downloadAttendancePDF, downloadAttendanceExcel} from "./configuracion-archivos.js";
 import { searchAttendance, searchStudents} from "./buscador.js";
-import { confirmAttendance, loadAttendance, checkAndClearAttendanceLog} from "./localstorage-asistencias.js";
 import { cerrarSession } from './sesion.js';
 
 const d=document;
@@ -19,12 +19,10 @@ d.getElementById('studentSearch').addEventListener('keyup', searchStudents);
 //Boton para confirmar la asistencia de los estudiantes
 d.getElementById('confirmarAsistencia').addEventListener('click', confirmAttendance);
 // Manejador para cerrar sesión
-d.getElementById('logoutButton').addEventListener('click',cerrarSession);
-
-
+d.getElementById('cerrar').addEventListener('click',cerrarSession);
 
 // Llamar a la función de verificación cuando se cargue la página
-document.addEventListener('DOMContentLoaded', function() {
+d.addEventListener('DOMContentLoaded', function() {
     if (!localStorage.getItem('authToken')) {
         window.location.href = "../index.html";
     } else {
@@ -33,4 +31,3 @@ document.addEventListener('DOMContentLoaded', function() {
         loadAttendance();
     }
 });
-
